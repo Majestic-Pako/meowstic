@@ -1,0 +1,355 @@
+/* Estilo de fondo de la web */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #eec199; 
+}
+
+main {
+    flex: 1;
+}
+/* Fin de Estilos de web*/
+
+/* Estilos del Layout */
+
+.btn-login {
+    background-color: #5d4037;  
+    color: white;
+    padding: 6px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-login:hover {
+    background-color: #3e2723;
+    color: white;
+}
+
+/* Fin de Estilos de Layout */
+
+/* Inicio de Estilos de Index */
+
+h1 {
+        text-align: center;
+        margin-bottom: 2rem;
+        color: #4e342e;
+    }
+
+    .cards-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        justify-content: center;
+    }
+
+    .card {
+        background-color: #fff8dc;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        width: 280px;
+        padding: 1.5rem;
+        text-align: center;
+        transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+    }
+
+    .card i {
+        font-size: 2.5rem;
+        margin-bottom: 0.8rem;
+        color: #8bc34a;
+    }
+
+    .card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+        color: #4e342e;
+    }
+
+    .card p {
+        font-size: 0.95rem;
+    }
+
+    .game-description {
+        max-width: 800px;
+        margin: 3rem auto 1.5rem;
+        text-align: center;
+        font-size: 1rem;
+        color: #444;
+    }
+
+    .steam-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        font-size: 1.1rem;
+        text-decoration: none;
+        color: #1b2838;
+        font-weight: bold;
+    }
+
+    .steam-link i {
+        font-size: 1.5rem;
+        color: #1b2838;
+    }
+
+    @media (max-width: 768px) {
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
+        }
+
+    .card {
+        width: 90%;
+        }
+    }
+
+/* Fin  de Estilos de Index */
+
+
+/* Inicio de Estilos de Producto */
+
+.inicio-producto{
+    padding-top: 20px;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    margin: auto;
+}
+
+.m-producto{
+    display:inline-block;
+    margin: auto;
+    padding-top: 25px;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+.disculpas{
+    width: 100%;
+    display: inline-block;
+    border-color: #3e2723;
+    text-align: center;
+    justify-content: center;
+    margin: auto;
+}
+.icon-disculpas{
+    color: 3e2723 ;
+    font-size: 40px;
+}
+
+.icon-producto{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    font-size: 40px;
+    color: #3e2723;
+}
+/* Fin de Estilos de Producto */
+
+/* Inicio de estilos footer */
+
+.footer {
+    background-color: #4e342e;
+    color: #f5f5dc;
+    padding: 2rem 1rem;
+}
+
+.footer-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.footer-left h2 {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.footer-left p {
+    font-size: 0.9rem;
+    margin: 4px 0 0;
+}
+
+.footer-divider {
+    flex-grow: 1;
+    height: 1px;
+    background-color: #bfaea0;
+    margin: 1rem 0;
+    display: none;
+}
+
+.footer-icons {
+    display: flex;
+    gap: 1.2rem;
+    font-size: 1.8rem;
+}
+
+.icon {
+    transition: opacity 0.3s;
+    text-decoration: none;
+}
+
+.icon:hover {
+    opacity: 0.75;
+    transform: translateY(-5px);
+}
+
+.icon-inst i { color: #6d4c41; }     
+.icon-github i { color: #8e44ad; }   
+.icon-yt i { color: #e53935; }       
+
+.footer-copy {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #ddd;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #8d6e63;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-divider {
+    display: block;
+    width: 80%;
+    }
+}
+
+/* Fin de estilos footer */
+
+/* Inicio de estilos login.blade.php */
+.auth-page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    gap: 4rem;
+    padding: 2rem;
+}
+
+/* Caja de formulario */
+.auth-form-box {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    padding: 2.5rem;
+    border: 1px solid #e1e1e1;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background: white;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    margin: 0 auto;
+}
+
+/* Estado oculto */
+.auth-form-box.auth-hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    height: 0;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    pointer-events: none;
+    position: absolute;
+}
+
+/* Grupo de inputs */
+.auth-input-group {
+    margin-bottom: 1.5rem;
+    transition: all 0.3s;
+}
+
+/* Labels */
+.auth-form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #495057;
+}
+
+/* Inputs */
+.auth-form-control {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.375rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+/* Botones */
+.auth-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    border: none;
+}
+
+.auth-btn-primary {
+    background-color: #0d6efd;
+    color: white;
+}
+
+.auth-btn-success {
+    background-color: #198754;
+    color: white;
+}
+
+/* Enlaces de cambio */
+.auth-switch-link {
+    display: block;
+    margin-top: 1rem;
+    text-align: center;
+    color: #0d6efd;
+    text-decoration: none;
+}
+
+/* Efecto focus */
+.auth-form-control:focus {
+    border-color: #86b7fe;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .auth-page-container {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 1rem;
+    }
+    
+    .auth-form-box {
+        width: 95%;
+        padding: 1.5rem;
+    }
+}
+/* Fin de estilos login.blade.php */
