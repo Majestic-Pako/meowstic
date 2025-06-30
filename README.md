@@ -1,3 +1,72 @@
+---
+
+## 🛠 Tecnologías usadas
+
+![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+
+---
+
+## ⚠️ Aviso
+
+Esta web es un **fan site** del juego **Stardew Valley**.  
+No se tiene intención de uso comercial ni de subir esta web a un dominio público.
+
+---
+
+## 🧑‍💻 Guía para desarrolladores: Cómo trabajar con Meowstic (Laravel)
+
+Esta sección está pensada para cualquier desarrollador que quiera clonar, ejecutar y colaborar en este proyecto Laravel.
+
+---
+
+### 📦 Clonación y configuración inicial
+```bash
+git clone https://github.com/Majestic-Pako/meowstic.git
+cd meowstic
+composer install
+cp .env.example .env
+php artisan key:generate
+```
+🛢️ Migraciones y base de datos
+```bash
+php artisan migrate           # Ejecuta todas las migraciones
+php artisan db:seed           # Inserta datos de prueba
+php artisan migrate:fresh --seed  # Borra todo, vuelve a migrar y ejecuta los seeders
+```
+🧰 Comandos útiles durante el desarrollo
+```bash
+php artisan serve             # Levanta el servidor en http://127.0.0.1:8000
+php artisan route:list        # Muestra todas las rutas registradas
+php artisan make:model Nombre -m   # Crea un modelo con migración
+php artisan make:controller NombreController  # Crea un controlador
+php artisan make:seeder NombreSeeder  # Crea un seeder
+php artisan storage:link      # Enlaza el almacenamiento público (para subir archivos, etc.)
+php artisan test              # Ejecuta las pruebas automatizadas
+```
+🧪 Requisitos del sistema
+- PHP >= 8.x
+- Composer
+- MySQL o SQLite
+
+---
+
+## 🐞 Barra de Debug para Laravel
+
+Para facilitar el desarrollo y la depuración, utilizamos la popular barra de debug **[Laravel Debugbar](https://github.com/barryvdh/laravel-debugbar)** creada por **Barry vd. Heuvel**.
+
+### Instalación
+
+Ejecutá este comando para instalarla en modo desarrollo:
+
+```bash
+composer require barryvdh/laravel-debugbar --dev
+```
+Créditos: Barry vd. Heuvel
+
+---
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
