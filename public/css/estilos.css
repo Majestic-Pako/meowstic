@@ -118,42 +118,176 @@ h1 {
 
 /* Inicio de Estilos de Producto */
 
-.inicio-producto{
-    padding-top: 20px;
-    text-align: center;
-    justify-content: center;
-    width: 100%;
-    margin: auto;
+.productos-container {
+    min-height: 100vh;
+    padding: 2rem 0;
 }
 
-.m-producto{
-    display:inline-block;
-    margin: auto;
-    padding-top: 25px;
-    justify-content: center;
+.productos-header {
     text-align: center;
-    width: 100%;
+    margin-bottom: 2rem;
 }
 
-.disculpas{
-    width: 100%;
-    display: inline-block;
-    border-color: #3e2723;
-    text-align: center;
-    justify-content: center;
-    margin: auto;
-}
-.icon-disculpas{
-    color: 3e2723 ;
-    font-size: 40px;
+.productos-title {
+    color: #5e8c61;
+    font-size: 2.5rem;
 }
 
-.icon-producto{
+.productos-subtitle {
+    color: #6b8e23;
+    font-size: 1.25rem;
+}
+.botones-accion {
     display: flex;
-    justify-content: center;
-    margin: auto;
-    font-size: 40px;
-    color: #3e2723;
+    gap: 0.5rem;
+}
+
+/* Estilo base para botones de acción */
+.botones-accion {
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* Controles superiores */
+.productos-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+/* Cards de productos */
+.producto-card {
+    height: 100%;
+    border-color: #8b4513;
+    transition: transform 0.2s;
+}
+
+.producto-card:hover {
+    transform: translateY(-5px);
+}
+
+.producto-card-header {
+    background-color: #e3d5b8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.producto-categoria {
+    font-size: 0.9rem;
+}
+
+.producto-categoria-peluches {
+    background-color: #ffc107;
+}
+
+.producto-categoria-stickers {
+    background-color: #0dcaf0;
+}
+
+.producto-categoria-mods {
+    background-color: #6c757d;
+}
+
+/* Botones de acción */
+.producto-card-header .d-flex {
+    gap: 0.4rem;
+}
+
+/* Estilo base para los botones */
+.producto-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Espacio entre los botones */
+.producto-card-header .d-flex {
+    gap: 0.5rem;
+}
+
+.btn-editar,
+.btn-eliminar {
+    position: relative;              /* Necesario para posicionar el ícono hijo */
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    padding: 0;
+    text-decoration: none;
+    overflow: hidden;
+    display: inline-block;           /* Ya no usamos flex acá */
+    vertical-align: middle;
+}
+
+/* Icono centrado manualmente */
+.btn-editar i,
+.btn-eliminar i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* 🔥 Este es el truco principal */
+    font-size: 18px;
+    color: inherit;
+    line-height: 1;
+}
+
+/* Botón Editar */
+.btn-editar {
+    background-color: #FFD700;
+    color: #000;
+}
+.btn-editar:hover {
+    background-color: #FFC000;
+    transform: scale(1.1);
+}
+
+/* Botón Eliminar */
+.btn-eliminar {
+    background-color: #FF4444;
+    color: #fff;
+}
+.btn-eliminar:hover {
+    background-color: #EE3333;
+    transform: scale(1.1);
+}
+
+/* Contenido de la card */
+.producto-card-body {
+    padding: 1.25rem;
+}
+
+.producto-titulo {
+    color: #5e8c61;
+    margin-bottom: 0.75rem;
+}
+
+/* Botón de compra */
+.btn-comprar {
+    display: block;
+    width: 100%;
+    background-color: #5e8c61;
+    color: white;
+    border-radius: 0 0 5px 5px;
+    padding: 0.5rem;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.btn-comprar:hover {
+    background-color: #4a6d4d;
+    color: white;
+}
+
+/* Filtro dropdown */
+.dropdown-toggle::after {
+    margin-left: 0.5em;
 }
 /* Fin de Estilos de Producto */
 
@@ -353,3 +487,10 @@ h1 {
     }
 }
 /* Fin de estilos login.blade.php */
+.table-clientes {
+    font-size: 0.9rem;
+}
+.table-clientes th {
+    background-color: #5e8c61;
+    color: white;
+}
