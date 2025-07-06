@@ -52,7 +52,6 @@ class BlogController extends Controller
 
     public function destroy(int $id)
     {
-        $this->authorize('admin');
         $blog = Blog::findOrFail($id);
         $blog->delete();
 
@@ -63,7 +62,6 @@ class BlogController extends Controller
 
     public function edit(int $id)
     {
-        $this->authorize('admin');
         return view('blogs.edit', [
             'blog' => Blog::findOrFail($id)
         ]);

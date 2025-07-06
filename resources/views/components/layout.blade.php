@@ -22,7 +22,7 @@
                     @auth
                         @if(auth()->user()->role === 'admin')
                         <li class="nav-item">
-                            <x-nav-link route="list">Listado</x-nav-link>
+                            <x-nav-link route="home">Home</x-nav-link>
                         </li>
                         @endif
                         @if(auth()->user()->role === 'client')
@@ -38,7 +38,7 @@
                         <x-nav-link route="blogs.index">Blog</x-nav-link>
                     </li>
                     <li class="nav-item">
-                        <x-nav-link route="producto">Tienda</x-nav-link>
+                        <x-nav-link route="productos.index">Tienda</x-nav-link>
                     </li>
                     @auth
                         <li class="nav-item">
