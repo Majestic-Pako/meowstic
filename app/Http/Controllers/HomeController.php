@@ -31,6 +31,6 @@ class HomeController extends Controller
         return view('home', ['clientes' => $clientes]);
     }
 
-    return view('home'); // Vista normal para clientes
+    return view('home'); 
     }
 }

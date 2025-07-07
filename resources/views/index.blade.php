@@ -30,6 +30,6 @@
         </a>
     </div>
     <p style="text-align:center; font-size: 0.8rem; color:#777; margin-top:2rem;">
-    Proyecto prototipo – Meowstic v2.0
+    Proyecto prototipo – Meowstic v3.0
     </p>
 </x-layout>

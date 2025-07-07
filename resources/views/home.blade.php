@@ -10,7 +10,6 @@
                     <table class="table table-sm table-hover">
                         <thead>
                             <tr class="table-primary">
-                                <th>ID</th>
                                 <th>Nombre</th>
                                 <th>Email</th>
                                 <th>Registro</th>
@@ -19,7 +18,6 @@
                         <tbody>
                             @forelse($clientes as $cliente)
                             <tr>
-                                <td>{{ $cliente->id }}</td>
                                 <td>{{ $cliente->name }}</td>
                                 <td>{{ $cliente->email }}</td>
                                 <td>{{ $cliente->created_at->format('d/m/Y') }}</td>
@@ -34,9 +32,8 @@
                 </div>
             </div>
         @endif
-        <!-- Resto del contenido normal de home -->
         <div class="row">
-            <!-- Tu contenido existente... -->
+            <h2>En proceso de construccion</h2>
         </div>
     </div>
 </x-layout>
