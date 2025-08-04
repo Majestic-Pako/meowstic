@@ -11,4 +11,9 @@ class Producto extends Model
     protected $primaryKey = 'productos_id';
 
     protected $fillable = ['titulo', 'descripcion','categoria'];
+
+    public function usuarios()
+    {
+        return $this->belongsToMany(User::class, 'producto_user', 'producto_id', 'user_id');
+    }
 }

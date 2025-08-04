@@ -2,12 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CarritoController;
 
 Route::get('/', [\App\Http\Controllers\HomeController::class,'index'])
     ->name('index');
 
-Route::get('perfil', [\App\Http\Controllers\HomeController::class,'perfil'])
-    ->name('perfil');
+Route::get('perfil', [\App\Http\Controllers\AuthController::class,'perfil'])
+    ->name('perfil')
+    ->middleware('auth');
 
 Route::get('home', [\App\Http\Controllers\HomeController::class,'home'])
     ->name('home')
@@ -74,24 +76,45 @@ Route::get('productos', [\App\Http\Controllers\ProductosController::class, 'inde
 
 Route::post('productos/publicar', [\App\Http\Controllers\ProductosController::class, 'store'])
     ->name('productos.store')
-    ->middleware('auth');  // Descomenta si quieres proteger esta ruta
+    ->middleware('auth'); 
 
 Route::get('productos/{id}/editar', [\App\Http\Controllers\ProductosController::class, 'edit'])
     ->name('productos.edit')
     ->whereNumber('id')
-    ->middleware('auth');  // Descomenta si quieres proteger esta ruta
+    ->middleware('auth');
 
 Route::put('productos/{id}/editar', [\App\Http\Controllers\ProductosController::class, 'update'])
     ->name('productos.update')
     ->whereNumber('id')
-    ->middleware('auth');  // Descomenta si quieres proteger esta ruta
+    ->middleware('auth');
 
 Route::get('productos/{id}/eliminar', [\App\Http\Controllers\ProductosController::class, 'delete'])
     ->name('productos.delete')
     ->whereNumber('id')
-    ->middleware('auth');  // Descomenta si quieres proteger esta ruta
+    ->middleware('auth');
 
 Route::delete('productos/{id}/eliminar', [\App\Http\Controllers\ProductosController::class, 'destroy'])
     ->name('productos.destroy')
     ->whereNumber('id')
     ->middleware('auth');
+/* Fin de Rutas de la carpeta Productos */ 
+
+/* Inicio de Rutas de la carpeta Carrito */ 
+Route::post('/carrito/agregar/{producto}', [CarritoController::class, 'agregar'])
+    ->name('carrito.agregar')
+    ->middleware('auth');
+
+Route::post('/carrito/quitar/{producto}', [CarritoController::class, 'quitar'])
+    ->name('carrito.quitar')
+    ->middleware('auth');
+
+Route::get('/carrito', [CarritoController::class, 'ver'])
+    ->name('carrito.ver')
+    ->middleware('auth');
+
+Route::post('/carrito/finalizar', [CarritoController::class, 'finalizar'])
+    ->name('carrito.finalizar')
+    ->middleware('auth');
+    //ejemplo de como lo hacia con el middleware pero falle pipipii
+    //->middleware(['auth', 'rol:client']);
+    /* Fin de Rutas de la carpeta Carrito */ 

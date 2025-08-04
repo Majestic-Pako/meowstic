@@ -17,9 +17,6 @@ class HomeController extends Controller
     public function producto(){
         return view('producto');
     }
-        public function perfil(){
-        return view('perfil');
-    }
         public function home()
     {
             if (auth()->user()->role === 'admin') {
@@ -33,4 +30,5 @@ class HomeController extends Controller
 
     return view('home'); 
     }
+
 }

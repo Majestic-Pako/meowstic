@@ -4,6 +4,7 @@
     <div class="productos-header">
         <h1 class="productos-title">Bienvenidos a Nuestros Productos</h1>
         <p class="productos-subtitle">En este espacio encontrarás mods, peluches, fondos y más sobre Stardew Valley</p>
+        <p class="productos-subtitle">Para Terminar las compras ingrese al carrito</p>
     </div>
     <div class="productos-controls container mb-4"> 
         <div class="d-flex justify-content-between align-items-center">
@@ -14,7 +15,7 @@
                         <i class="bi bi-plus-circle"></i> + Publicar nuevo Producto
                     </a>
                 </div>
-                @else //Eta wea es para hacer un espacio cuando no este el publicar xD
+                @else 
                 <div></div>
                 @endif
             @else
@@ -32,7 +33,16 @@
                     <li><a class="dropdown-item" href="?">Todas las categorías</a></li>
                 </ul>
             </div>
-        </div>
+            @auth
+                @if(auth()->user()->role === 'client')
+            <div>
+                <a href="{{ route('carrito.ver') }}" class="btn btn-outline-primary">
+                    <i class="bi bi-bag-check me-1"></i> Ver Carrito
+                </a>
+            </div>
+                @endif
+            @endauth
+        </div>  
     </div>
         <div class="container">
             <div class="row">
@@ -62,11 +72,14 @@
                         </div>
                         @auth
                             @if(auth()->user()->role === 'client')
-                            <a href="#" class="btn-comprar">
-                                <div class="d-flex justify-content-center align-items-center">
-                                    <i class="bi bi-cart3 me-2"></i> Comprar ahora
-                                </div>
-                            </a>
+                            <form action="{{ route('carrito.agregar', $producto->productos_id) }}" method="POST">
+                            @csrf
+                                <button type="submit" class="btn-comprar w-100 mt-2">
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <i class="bi bi-cart3 me-2"></i> Comprar ahora
+                                    </div>
+                                </button>
+                            </form>
                             @endif
                         @endauth
                     </div>
