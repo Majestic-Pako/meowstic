@@ -17,7 +17,6 @@ class AuthController extends Controller
     public function authenticate(Request $request)
     {
         //TODO: Validar
-
         $credentials = $request->only(['email', 'password']);
 
         if(Auth::attempt($credentials)){
@@ -36,7 +35,6 @@ class AuthController extends Controller
 
 public function logout(Request $request)
 {
-        //dd($request->all()); //Metodo pa depurar
         Auth::logout();
 
         $request->session()->invalidate();
@@ -54,15 +52,13 @@ public function logout(Request $request)
 
 public function store(Request $request)
 {
-    // Validación simplificada (sin confirmación de contraseña)
     $request->validate([
         'name' => 'required|string|max:255',
         'email' => 'required|email|unique:users',
-        'password' => 'required|min:3', // Sin confirmed
+        'password' => 'required|min:3', 
     ]);
 
     try {
-        // Verifica manualmente si el email existe (doble protección)
         if (User::where('email', $request->email)->exists()) {
             return back()
                 ->withInput()
@@ -73,7 +69,7 @@ public function store(Request $request)
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'role' => 'client', // Asignación directa
+            'role' => 'client', 
         ]);
 
         Auth::login($user);
@@ -93,5 +89,13 @@ public function showForm(Request $request)
     {
         $showRegister = $request->has('show_register') && $request->show_register === 'true';
         return view('auth.form', ['showRegister' => $showRegister]);
+    }
+    
+
+public function perfil()
+    {
+        $user = Auth::user();
+        $productosComprados = $user->compras;
+        return view('perfil.index', compact('productosComprados'));
     }
 }
